@@ -17,7 +17,7 @@ function App() {
       {/* Hero */}
       <section className="hero-section">
         <div className="hero-badge">🚀 CI/CD Powered</div>
-        <h1>Build. Deploy. <span className="gradient-text">Scale.</span></h1>
+        <h1>DHARSHANA... <span className="gradient-text">Scale.</span></h1>
         <p className="hero-sub">
           Modern cloud infrastructure with AWS, Docker, and automated pipelines.
           Ship faster with confidence.
