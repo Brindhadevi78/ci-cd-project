@@ -25,7 +25,7 @@ jobs:
       - name: Build Docker Image
         run: |
           docker build -t brindhadevi123/ci-cd-tenten:${{ github.sha }} .
-          docker tag brindhadevi123/ci-cd-tenten:${{ github.sha }} atomcodex/aws-cicd:latest
+          docker tag brindhadevi123/ci-cd-tenten:${{ github.sha }} brindhadevi123/ci-cd:latest
 
       - name: Push Docker Images
         run: |
