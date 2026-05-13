@@ -1,114 +1,78 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>AWS</h1>
-          <p>
-          <code>CI CD</code>
-          </p>
-        </div>
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="nav-logo">DevOps<span>Pro</span></div>
+        <ul className="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" className="btn-primary">Get Started</a>
+      </nav>
 
+      {/* Hero */}
+      <section className="hero-section">
+        <div className="hero-badge">🚀 CI/CD Powered</div>
+        <h1>Build. Deploy. <span className="gradient-text">Scale.</span></h1>
+        <p className="hero-sub">
+          Modern cloud infrastructure with AWS, Docker, and automated pipelines.
+          Ship faster with confidence.
+        </p>
+        <div className="hero-actions">
+          <a href="#features" className="btn-primary">Explore Features</a>
+          <a href="#stack" className="btn-outline">View Stack</a>
+        </div>
+        <div className="hero-glow" />
       </section>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+      {/* Features */}
+      <section className="section" id="features">
+        <h2 className="section-title">Why Choose Us</h2>
+        <p className="section-sub">Everything you need to ship production-ready apps</p>
+        <div className="cards-grid">
+          {[
+            { icon: '⚡', title: 'Fast Deployments', desc: 'Automated CI/CD pipelines that deploy in seconds, not hours.' },
+            { icon: '🔒', title: 'Secure by Default', desc: 'IAM roles, secrets management, and encrypted storage out of the box.' },
+            { icon: '📈', title: 'Auto Scaling', desc: 'Handle any traffic spike with AWS auto-scaling groups.' },
+            { icon: '🐳', title: 'Containerized', desc: 'Docker-first approach for consistent environments everywhere.' },
+            { icon: '🌍', title: 'Global CDN', desc: 'CloudFront distribution for low-latency worldwide delivery.' },
+            { icon: '📊', title: 'Monitoring', desc: 'Real-time metrics and alerts with CloudWatch dashboards.' },
+          ].map((f) => (
+            <div className="card" key={f.title}>
+              <div className="card-icon">{f.icon}</div>
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+      {/* Tech Stack */}
+      <section className="section stack-section" id="stack">
+        <h2 className="section-title">Tech Stack</h2>
+        <p className="section-sub">Powered by industry-leading tools</p>
+        <div className="stack-grid">
+          {['AWS', 'Docker', 'React', 'Vite', 'Nginx', 'GitHub Actions'].map((tech) => (
+            <div className="stack-pill" key={tech}>{tech}</div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="cta-section" id="contact">
+        <h2>Ready to get started?</h2>
+        <p>Deploy your first app in minutes with our streamlined workflow.</p>
+        <a href="mailto:hello@example.com" className="btn-primary btn-lg">Contact Us →</a>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <span>© 2025 DevOpsPro. Built with React + Vite on AWS.</span>
+      </footer>
     </>
   )
 }
